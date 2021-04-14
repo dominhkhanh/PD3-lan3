@@ -1,0 +1,31 @@
+{
+    "project_info": {
+        "project_number": "1002769504378",
+        "project_id": "tuongtacapp",
+        "storage_bucket": "tuongtacapp.appspot.com"
+    },
+    "client": [{
+        "client_info": {
+            "mobilesdk_app_id": "1:1002769504378:android:3d36bea55b462d842443c3",
+            "android_client_info": {
+                "package_name": "com.example.App"
+            }
+        },
+        "oauth_client": [{
+            "client_id": "1002769504378-7uduqg5572pajgb6sb633a5fui168p38.apps.googleusercontent.com",
+            "client_type": 3
+        }],
+        "api_key": [{
+            "current_key": "AIzaSyB_RMA7voylbvDViSvObwob1upq4JJK7IY"
+        }],
+        "services": {
+            "appinvite_service": {
+                "other_platform_oauth_client": [{
+                    "client_id": "1002769504378-7uduqg5572pajgb6sb633a5fui168p38.apps.googleusercontent.com",
+                    "client_type": 3
+                }]
+            }
+        }
+    }],
+    "configuration_version": "1"
+}
