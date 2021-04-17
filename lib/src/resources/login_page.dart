@@ -53,7 +53,6 @@ class _LoginPageState extends State<LoginPage> {
               padding: const EdgeInsets.fromLTRB(0, 0, 0 , 40 ),
               child: StreamBuilder(
                 stream: bloc.userStream,
-                
                 builder: (context, snapshot) => TextField(
                 style: TextStyle(fontSize: 18),
                 controller: _userController,
@@ -99,7 +98,6 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                 )
               )
-                
               ]
             ),
             ),
@@ -124,15 +122,11 @@ class _LoginPageState extends State<LoginPage> {
             ),
             
                Container(
-                height: 130,
+                height: 20,
                 width: double.infinity,
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
-                    Text(
-                      "NEW USER? SIGN UP",
-                      style: TextStyle(fontSize: 15,color:Color(0xff888888))
-                    ),
                     Text(
                       "FORGOT PASSWORD?",
                       style: TextStyle(fontSize: 15,color:Colors.blue),
@@ -140,8 +134,6 @@ class _LoginPageState extends State<LoginPage> {
                   ],
                 ),
               ),
-
-            
             ],
           ),
         ),
