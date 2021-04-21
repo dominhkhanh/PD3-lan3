@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="default_web_client_id" translatable="false">1002769504378-7uduqg5572pajgb6sb633a5fui168p38.apps.googleusercontent.com</string>
-    <string name="gcm_defaultSenderId" translatable="false">1002769504378</string>
-    <string name="google_api_key" translatable="false">AIzaSyB_RMA7voylbvDViSvObwob1upq4JJK7IY</string>
-    <string name="google_app_id" translatable="false">1:1002769504378:android:3d36bea55b462d842443c3</string>
-    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyB_RMA7voylbvDViSvObwob1upq4JJK7IY</string>
-    <string name="google_storage_bucket" translatable="false">tuongtacapp.appspot.com</string>
-    <string name="project_id" translatable="false">tuongtacapp</string>
+    <string name="default_web_client_id" translatable="false">853450079883-oraurf5qneu9crdblqmv6o4bvvgsscab.apps.googleusercontent.com</string>
+    <string name="gcm_defaultSenderId" translatable="false">853450079883</string>
+    <string name="google_api_key" translatable="false">AIzaSyBUVayeqmiaWltvM37rOwejpY3AnfgQllE</string>
+    <string name="google_app_id" translatable="false">1:853450079883:android:cde01ac32494892a4a1e8e</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyBUVayeqmiaWltvM37rOwejpY3AnfgQllE</string>
+    <string name="google_storage_bucket" translatable="false">sound-velocity-296308.appspot.com</string>
+    <string name="project_id" translatable="false">sound-velocity-296308</string>
 </resources>

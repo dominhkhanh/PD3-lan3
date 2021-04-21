@@ -39,57 +39,15 @@
     },
     {
       "name": "cupertino_icons",
-      "rootUri": "file:///C:/Users/trans/AppData/Local/Pub/Cache/hosted/pub.dartlang.org/cupertino_icons-1.0.0",
+      "rootUri": "file:///C:/Users/trans/AppData/Local/Pub/Cache/hosted/pub.dartlang.org/cupertino_icons-1.0.2",
       "packageUri": "lib/",
-      "languageVersion": "2.0"
+      "languageVersion": "2.12"
     },
     {
       "name": "fake_async",
       "rootUri": "file:///C:/Users/trans/AppData/Local/Pub/Cache/hosted/pub.dartlang.org/fake_async-1.2.0",
       "packageUri": "lib/",
       "languageVersion": "2.12"
-    },
-    {
-      "name": "firebase_auth",
-      "rootUri": "file:///C:/Users/trans/AppData/Local/Pub/Cache/hosted/pub.dartlang.org/firebase_auth-0.20.1",
-      "packageUri": "lib/",
-      "languageVersion": "2.0"
-    },
-    {
-      "name": "firebase_auth_platform_interface",
-      "rootUri": "file:///C:/Users/trans/AppData/Local/Pub/Cache/hosted/pub.dartlang.org/firebase_auth_platform_interface-3.1.0",
-      "packageUri": "lib/",
-      "languageVersion": "2.0"
-    },
-    {
-      "name": "firebase_auth_web",
-      "rootUri": "file:///C:/Users/trans/AppData/Local/Pub/Cache/hosted/pub.dartlang.org/firebase_auth_web-0.3.3",
-      "packageUri": "lib/",
-      "languageVersion": "2.0"
-    },
-    {
-      "name": "firebase_core",
-      "rootUri": "file:///C:/Users/trans/AppData/Local/Pub/Cache/hosted/pub.dartlang.org/firebase_core-0.7.0",
-      "packageUri": "lib/",
-      "languageVersion": "2.1"
-    },
-    {
-      "name": "firebase_core_platform_interface",
-      "rootUri": "file:///C:/Users/trans/AppData/Local/Pub/Cache/hosted/pub.dartlang.org/firebase_core_platform_interface-3.0.1",
-      "packageUri": "lib/",
-      "languageVersion": "2.1"
-    },
-    {
-      "name": "firebase_core_web",
-      "rootUri": "file:///C:/Users/trans/AppData/Local/Pub/Cache/hosted/pub.dartlang.org/firebase_core_web-0.2.1+3",
-      "packageUri": "lib/",
-      "languageVersion": "2.1"
-    },
-    {
-      "name": "firebase_database",
-      "rootUri": "file:///C:/Users/trans/AppData/Local/Pub/Cache/hosted/pub.dartlang.org/firebase_database-6.0.0",
-      "packageUri": "lib/",
-      "languageVersion": "2.0"
     },
     {
       "name": "flutter",
@@ -104,26 +62,14 @@
       "languageVersion": "2.12"
     },
     {
-      "name": "flutter_web_plugins",
-      "rootUri": "file:///C:/src/flutter/packages/flutter_web_plugins",
+      "name": "http",
+      "rootUri": "file:///C:/Users/trans/AppData/Local/Pub/Cache/hosted/pub.dartlang.org/http-0.13.1",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
     {
       "name": "http_parser",
-      "rootUri": "file:///C:/Users/trans/AppData/Local/Pub/Cache/hosted/pub.dartlang.org/http_parser-3.1.4",
-      "packageUri": "lib/",
-      "languageVersion": "2.3"
-    },
-    {
-      "name": "intl",
-      "rootUri": "file:///C:/Users/trans/AppData/Local/Pub/Cache/hosted/pub.dartlang.org/intl-0.16.1",
-      "packageUri": "lib/",
-      "languageVersion": "2.5"
-    },
-    {
-      "name": "js",
-      "rootUri": "file:///C:/Users/trans/AppData/Local/Pub/Cache/hosted/pub.dartlang.org/js-0.6.3",
+      "rootUri": "file:///C:/Users/trans/AppData/Local/Pub/Cache/hosted/pub.dartlang.org/http_parser-4.0.0",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -146,16 +92,10 @@
       "languageVersion": "2.12"
     },
     {
-      "name": "plugin_platform_interface",
-      "rootUri": "file:///C:/Users/trans/AppData/Local/Pub/Cache/hosted/pub.dartlang.org/plugin_platform_interface-1.0.3",
+      "name": "pedantic",
+      "rootUri": "file:///C:/Users/trans/AppData/Local/Pub/Cache/hosted/pub.dartlang.org/pedantic-1.11.0",
       "packageUri": "lib/",
-      "languageVersion": "2.1"
-    },
-    {
-      "name": "quiver",
-      "rootUri": "file:///C:/Users/trans/AppData/Local/Pub/Cache/hosted/pub.dartlang.org/quiver-2.1.5",
-      "packageUri": "lib/",
-      "languageVersion": "2.0"
+      "languageVersion": "2.12"
     },
     {
       "name": "sky_engine",
@@ -212,13 +152,13 @@
       "languageVersion": "2.12"
     },
     {
-      "name": "App",
+      "name": "app",
       "rootUri": "../",
       "packageUri": "lib/",
       "languageVersion": "2.7"
     }
   ],
-  "generated": "2021-04-16T15:28:45.673650Z",
+  "generated": "2021-04-21T08:02:53.493793Z",
   "generator": "pub",
   "generatorVersion": "2.12.2"
 }
