@@ -15,10 +15,14 @@ class  _homepage2State extends State<homepage2> {
     Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("home Page"), 
+        title: Text("Trang Chủ"),
+      ),
+      body: Container(
+
       ),
       
     );
     
     }
 }
+
