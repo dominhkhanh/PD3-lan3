@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/dominhkhanh/Downloads/PD3-lan2-main/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values-ta/values-ta.xml",
+            "outputFile": "/Users/dominhkhanh/PD3-lan3/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values-ta/values-ta.xml",
             "map": [
                 {
                     "source": "/Users/dominhkhanh/.gradle/caches/transforms-2/files-2.1/b5f770768cf1b6f6c3fbca3eedbdb31f/jetified-play-services-basement-17.1.0/res/values-ta/values.xml",
