@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';  
 import 'package:App/src/resources/transcript.dart';
-import 'package:App/src/resources/calendar.dart';
+import 'package:App/src/resources/ListSchedule.dart';
 
 
 class homepage2 extends StatefulWidget {
@@ -113,7 +113,7 @@ class  _homepage2State extends State<homepage2> {
     void onClicked(){
       Navigator.push(
       context,
-      MaterialPageRoute(builder: (context) => calendar() ),
+      MaterialPageRoute(builder: (context) => ListSchedule() ),
       );
     }
 }
