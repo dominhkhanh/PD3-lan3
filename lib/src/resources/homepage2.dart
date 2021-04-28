@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';  
+import 'package:flutter/material.dart';
 
 
 
@@ -8,17 +8,24 @@ class homepage2 extends StatefulWidget {
   _homepage2State createState()=> _homepage2State();
 
 }
-  
 
 class  _homepage2State extends State<homepage2> {
     @override
     Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        centerTitle: true,
         title: Text("Trang Chủ"),
       ),
-      body: Container(
-
+      body: Center(
+          child: Container(
+            height: 50,
+            width: 150,
+            decoration: BoxDecoration(
+              color: Colors.blue,
+              borderRadius: BorderRadius.circular(20)
+            ),
+          ),
       ),
       
     );

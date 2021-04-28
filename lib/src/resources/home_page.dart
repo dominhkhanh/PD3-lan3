@@ -1,9 +1,10 @@
 
 
 
-import 'package:flutter/material.dart';  
+import 'package:App/src/resources/ListLichHoc/List_schedule.dart';
+import 'package:flutter/material.dart';
 import 'ContificationsPage.dart';
-import 'Profile.dart';
+import 'Profile/Profileuser.dart';
 import 'homepage2.dart';
  
 class HomePage extends StatelessWidget {  
@@ -29,7 +30,7 @@ class _MyNavigationBarState extends State<MyNavigationBar > {
   // static const List<Widget> _widgetOptions = <Widget>[  
      
   // ];  
-  final List<Widget> _chilerend= [homepage2(), ContificationsPage(), Profile() ];
+  final List<Widget> _chilerend= [homepage2(), ContificationsPage(), ListSchedule(),Profileuser()];
   
   void _onItemTapped(int index) {  
     setState(() {  
@@ -41,18 +42,20 @@ class _MyNavigationBarState extends State<MyNavigationBar > {
   Widget build(BuildContext context) {  
     return Scaffold(  
       body: _chilerend[_selectIndex],
+
       bottomNavigationBar: BottomNavigationBar(
         items: [
           
-          NavItem(Icons.home,'Home'),
-          NavItem(Icons.notifications,'Notifications'),
-          NavItem(Icons.save, 'Profile'),
+          NavItem(Icons.home,'Trang Chủ'),
+          NavItem(Icons.notifications,'Thông báo'),
+          NavItem(Icons.list_sharp,'Lịch Học'),
+          NavItem(Icons.save, 'Thông Tin'),
 
         ],
         selectedItemColor: Colors.black,
-        backgroundColor: Colors.blue,
-        unselectedItemColor: Colors.white,
+
         onTap: _onItemTapped,
+        unselectedItemColor: Colors.white,
         currentIndex: _selectIndex,
       ),
     );  
@@ -60,9 +63,10 @@ class _MyNavigationBarState extends State<MyNavigationBar > {
 
   BottomNavigationBarItem NavItem(IconData icon, String title){
     return BottomNavigationBarItem(
+      backgroundColor: Colors.blue,
       icon: Icon(icon),
       title: Text(title)
-      );
+    );
   }
 
 
