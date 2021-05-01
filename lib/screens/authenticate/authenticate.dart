@@ -17,7 +17,7 @@ class _AuthenticateState extends State<Authenticate> {
   TextEditingController _passController = new TextEditingController();
 
   Future login() async {
-    Uri myUri = Uri.parse("http://192.168.1.57:8080/db_flutter/login.php");
+    Uri myUri = Uri.parse("http://192.168.0.31:8080/db_flutter/login.php");
     var url = "http:/localhost:8080/db_flutter/login.php";
     var response = await http.post(myUri, body: {
       "student_id": _userController.text,
