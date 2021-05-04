@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
-import '../notification/notification.dart';
-import '../profile/profile.dart';
-import '../navigation/nav_bottom.dart';
+import 'package:app/screens/list/ListSchedule.dart';
+import 'package:app/screens/view_score/view_score.dart';
+import 'package:app/screens/notification/notification.dart';
+import 'package:app/screens/profile/profile.dart';
+import 'package:app/screens/navigation/nav_bottom.dart';
 
 class Home extends StatelessWidget {
   @override
@@ -49,17 +51,6 @@ class _MyNavigationBarState extends State<MyNavigationBar> {
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            // Column(
-            //     mainAxisAlignment: MainAxisAlignment.end,
-            //     crossAxisAlignment: CrossAxisAlignment.start,
-            //     children: <Widget>[
-
-            //       Image.asset(
-            //         'images/logo.png',
-            //         width: 120,
-            //         height: 120,
-            //       ),
-            //     ]),
             Column(
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -73,7 +64,7 @@ class _MyNavigationBarState extends State<MyNavigationBar> {
                       color: Colors.red[300],
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.all(Radius.circular(8))),
-                      onPressed: () {},
+                      onPressed: onClick_ListSchedule,
                       child: Text("Lịch Học",
                           style: TextStyle(color: Colors.white, fontSize: 20)),
                     ),
@@ -94,7 +85,7 @@ class _MyNavigationBarState extends State<MyNavigationBar> {
                       color: Colors.blue[300],
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.all(Radius.circular(8))),
-                      onPressed: () {},
+                      onPressed: onClick_ViewScore,
                       child: Text("Xem Điểm",
                           style: TextStyle(color: Colors.white, fontSize: 20)),
                     ),
@@ -112,7 +103,17 @@ class _MyNavigationBarState extends State<MyNavigationBar> {
     return BottomNavigationBarItem(icon: Icon(icon), title: Text(title));
   }
 
-  // void onlichClicked(){
+  void onClick_ListSchedule() {
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => ListSchedule()),
+    );
+  }
 
-  // }
+  void onClick_ViewScore() {
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => ViewScore()),
+    );
+  }
 }

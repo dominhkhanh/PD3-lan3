@@ -1,7 +1,9 @@
+import 'dart:core';
 import 'dart:convert';
 import 'package:app/src/blocs/login_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:app/screens/home/home.dart';
+import 'package:app/screens/navigation/nav_bottom.dart';
 import 'package:http/http.dart' as http;
 
 class Authenticate extends StatefulWidget {
@@ -17,16 +19,17 @@ class _AuthenticateState extends State<Authenticate> {
   TextEditingController _passController = new TextEditingController();
 
   Future login() async {
-    Uri myUri = Uri.parse("http://192.168.0.31:8080/db_flutter/login.php");
-    var url = "http:/localhost:8080/db_flutter/login.php";
+    Uri myUri =
+        Uri.parse("http://192.168.0.31:8080/db_flutter/controllers/login.php");
+    var url = "http:/192.168.0.31:8080/db_flutter/login.php";
     var response = await http.post(myUri, body: {
       "student_id": _userController.text,
-      "password": _passController.text
+      "password": _passController.text,
     });
     var user = json.decode(response.body);
     if (user == "Success") {
-      print(user);
-      Navigator.push(context, MaterialPageRoute(builder: (context) => Home()));
+      Navigator.push(
+          context, MaterialPageRoute(builder: (context) => NavigationBottom()));
     }
   }
 
