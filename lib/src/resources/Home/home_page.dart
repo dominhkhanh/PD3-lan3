@@ -47,7 +47,7 @@ class _MyNavigationBarState extends State<MyNavigationBar > {
         items: [
           
           NavItem(Icons.home,'Trang Chủ'),
-          NavItem(Icons.notifications,'Thông báo'),
+          NavItem(Icons.book,'Tài Liệu'),
           NavItem(Icons.list_sharp,'Lịch Học'),
           NavItem(Icons.save, 'Thông Tin'),
 

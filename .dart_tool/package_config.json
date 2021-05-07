@@ -98,6 +98,12 @@
       "languageVersion": "2.10"
     },
     {
+      "name": "flutter_linkify",
+      "rootUri": "file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_linkify-2.1.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.0"
+    },
+    {
       "name": "flutter_test",
       "rootUri": "file:///C:/src/flutter/packages/flutter_test",
       "packageUri": "lib/",
@@ -124,6 +130,12 @@
     {
       "name": "js",
       "rootUri": "file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/js-0.6.2",
+      "packageUri": "lib/",
+      "languageVersion": "2.0"
+    },
+    {
+      "name": "linkify",
+      "rootUri": "file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/linkify-1.0.1",
       "packageUri": "lib/",
       "languageVersion": "2.0"
     },
@@ -206,6 +218,12 @@
       "languageVersion": "2.10"
     },
     {
+      "name": "url_launcher",
+      "rootUri": "file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/url_launcher-3.0.3",
+      "packageUri": "lib/",
+      "languageVersion": "2.0"
+    },
+    {
       "name": "vector_math",
       "rootUri": "file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/vector_math-2.1.0-nullsafety.3",
       "packageUri": "lib/",
@@ -218,7 +236,7 @@
       "languageVersion": "2.7"
     }
   ],
-  "generated": "2021-04-18T13:04:15.264804Z",
+  "generated": "2021-05-06T15:17:28.123085Z",
   "generator": "pub",
   "generatorVersion": "2.10.5"
 }

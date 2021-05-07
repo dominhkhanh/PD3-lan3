@@ -6,6 +6,7 @@ INJECTED from C:\Users\MINH TUAN\Desktop\doan\android\app\src\main\AndroidManife
 INJECTED from C:\Users\MINH TUAN\Desktop\doan\android\app\src\main\AndroidManifest.xml:1:1-47:12
 MERGED from C:\Users\MINH TUAN\Desktop\doan\android\app\src\main\AndroidManifest.xml:1:1-47:12
 MERGED from [:firebase_auth] C:\Users\MINH TUAN\Desktop\doan\build\firebase_auth\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-15:12
+MERGED from [:url_launcher] C:\Users\MINH TUAN\Desktop\doan\build\url_launcher\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-14:12
 MERGED from [:firebase_database] C:\Users\MINH TUAN\Desktop\doan\build\firebase_database\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-15:12
 MERGED from [:firebase_core] C:\Users\MINH TUAN\Desktop\doan\build\firebase_core\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-15:12
 MERGED from [com.google.firebase:firebase-auth:20.0.1] C:\Users\MINH TUAN\.gradle\caches\transforms-2\files-2.1\c60c1efeb54a2eb20bd607d5e2f9bd60\jetified-firebase-auth-20.0.1\AndroidManifest.xml:17:1-83:12
@@ -54,6 +55,8 @@ application
 ADDED from C:\Users\MINH TUAN\Desktop\doan\android\app\src\main\AndroidManifest.xml:8:5-46:19
 MERGED from [:firebase_auth] C:\Users\MINH TUAN\Desktop\doan\build\firebase_auth\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-13:19
 MERGED from [:firebase_auth] C:\Users\MINH TUAN\Desktop\doan\build\firebase_auth\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-13:19
+MERGED from [:url_launcher] C:\Users\MINH TUAN\Desktop\doan\build\url_launcher\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-12:19
+MERGED from [:url_launcher] C:\Users\MINH TUAN\Desktop\doan\build\url_launcher\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-12:19
 MERGED from [:firebase_database] C:\Users\MINH TUAN\Desktop\doan\build\firebase_database\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-13:19
 MERGED from [:firebase_database] C:\Users\MINH TUAN\Desktop\doan\build\firebase_database\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-13:19
 MERGED from [:firebase_core] C:\Users\MINH TUAN\Desktop\doan\build\firebase_core\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-13:19
@@ -134,6 +137,8 @@ INJECTED from C:\Users\MINH TUAN\Desktop\doan\android\app\src\main\AndroidManife
 INJECTED from C:\Users\MINH TUAN\Desktop\doan\android\app\src\main\AndroidManifest.xml
 MERGED from [:firebase_auth] C:\Users\MINH TUAN\Desktop\doan\build\firebase_auth\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [:firebase_auth] C:\Users\MINH TUAN\Desktop\doan\build\firebase_auth\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
+MERGED from [:url_launcher] C:\Users\MINH TUAN\Desktop\doan\build\url_launcher\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
+MERGED from [:url_launcher] C:\Users\MINH TUAN\Desktop\doan\build\url_launcher\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [:firebase_database] C:\Users\MINH TUAN\Desktop\doan\build\firebase_database\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [:firebase_database] C:\Users\MINH TUAN\Desktop\doan\build\firebase_database\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [:firebase_core] C:\Users\MINH TUAN\Desktop\doan\build\firebase_core\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
@@ -230,6 +235,14 @@ ADDED from [:firebase_auth] C:\Users\MINH TUAN\Desktop\doan\build\firebase_auth\
 		ADDED from [:firebase_auth] C:\Users\MINH TUAN\Desktop\doan\build\firebase_auth\intermediates\library_manifest\debug\AndroidManifest.xml:11:17-82
 	android:name
 		ADDED from [:firebase_auth] C:\Users\MINH TUAN\Desktop\doan\build\firebase_auth\intermediates\library_manifest\debug\AndroidManifest.xml:10:17-124
+activity#io.flutter.plugins.urllauncher.UrlLauncherPlugin$WebViewActivity
+ADDED from [:url_launcher] C:\Users\MINH TUAN\Desktop\doan\build\url_launcher\intermediates\library_manifest\debug\AndroidManifest.xml:8:9-11:74
+	android:exported
+		ADDED from [:url_launcher] C:\Users\MINH TUAN\Desktop\doan\build\url_launcher\intermediates\library_manifest\debug\AndroidManifest.xml:10:13-37
+	android:theme
+		ADDED from [:url_launcher] C:\Users\MINH TUAN\Desktop\doan\build\url_launcher\intermediates\library_manifest\debug\AndroidManifest.xml:11:13-71
+	android:name
+		ADDED from [:url_launcher] C:\Users\MINH TUAN\Desktop\doan\build\url_launcher\intermediates\library_manifest\debug\AndroidManifest.xml:9:13-92
 meta-data#com.google.firebase.components:io.flutter.plugins.firebase.database.FlutterFirebaseAppRegistrar
 ADDED from [:firebase_database] C:\Users\MINH TUAN\Desktop\doan\build\firebase_database\intermediates\library_manifest\debug\AndroidManifest.xml:9:13-11:85
 	android:value

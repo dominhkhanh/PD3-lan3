@@ -1,7 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:App/src/resources/ListLichHoc/details.dart';
-
+import 'details.dart';
 
 class ListSchedule extends StatefulWidget {
   ListSchedule({Key key }) : super (key: key);
@@ -12,57 +11,50 @@ class ListSchedule extends StatefulWidget {
 class  _ListSchedule extends State<ListSchedule> {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-        home: Scaffold(
-          appBar: AppBar(
-            centerTitle: true,
-          title: Text("Danh Sách Lịch Học"),
-            // leading: IconButton(
-            //         icon: Icon(Icons.arrow_back),
-            //         onPressed: () {
-            //         }
-            // )
-          ),
-          body: _buildListView(context),
-        )
-    );
-  }
-  ListView _buildListView(BuildContext buildContext){
-    return ListView.builder(
-        itemCount: 2,
-        itemBuilder: (_, index){
-          return ListTile(
-            title: Text('Lịch Học Công Cụ Phần Mềm $index'),
-            leading: Icon(Icons.book),
-            trailing: Icon(Icons.arrow_forward),
-            onTap: (){
-              Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => DetailPages(index))
-              );
-            },
-          );
-        },
-    );
-  }
-}
-
-class DetailPages extends StatelessWidget{
-final int index;
-
-DetailPages(this.index);
-@override
-Widget build(BuildContext context) {
-  // TODO: implement build
-  return Scaffold(
-    appBar: AppBar(
-      title: Text('Chi Tiết Lịch Học'),
-    ),
-    body:Center(
-      child: Container(
-        child: Text('  Nội dung lịch học'), // $index
+    return Scaffold(
+      appBar: AppBar(
+        centerTitle: true,
+        title: Text("Lịch Học"),
       ),
-    ),
-  );
+      body: Center(
+        child: Column(
+          children: [
+            Designlichhoc(
+              text: "Lập trình hướng đối tượng",
+              icon: "assets/icons/Bell.svg",
+              press:() => {Navigator.push(context, MaterialPageRoute(
+                  builder: (context)=> lichhoc())
+              )},
+            ),
+          ],
+        ),
+      ),
+
+    );
+  }
 }
+
+class lichhoc extends StatelessWidget{
+  var defaultText = TextStyle(color: Colors.black);
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Chi Tiết Lịch Học'),
+      ),
+      body:Center(
+        child: RichText(
+          text: TextSpan(
+              children: [
+                TextSpan(
+                    style: defaultText,
+                    text: 'Lập trình hướng đối tượng: thứ 6 ngày 7/5/2021'
+                ),
+              ]
+          ),
+        ),
+      ),
+    );
+  }
 }

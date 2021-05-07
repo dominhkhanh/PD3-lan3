@@ -97,6 +97,10 @@
         </service>
 
         <activity
+            android:name="io.flutter.plugins.urllauncher.UrlLauncherPlugin$WebViewActivity"
+            android:exported="false"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
+        <activity
             android:name="com.google.firebase.auth.internal.GenericIdpActivity"
             android:excludeFromRecents="true"
             android:exported="true"
