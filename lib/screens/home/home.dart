@@ -1,9 +1,13 @@
+import 'dart:core';
+import 'dart:convert';
 import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http;
 import 'package:app/screens/list/ListSchedule.dart';
 import 'package:app/screens/view_score/view_score.dart';
 import 'package:app/screens/notification/notification.dart';
 import 'package:app/screens/profile/profile.dart';
 import 'package:app/screens/navigation/nav_bottom.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class Home extends StatelessWidget {
   @override
@@ -25,15 +29,16 @@ class MyNavigationBar extends StatefulWidget {
 
 class _MyNavigationBarState extends State<MyNavigationBar> {
   int _selectIndex = 0;
-  // static const List<Widget> _widgetOptions = <Widget>[
-
-  // ];
   final List<Widget> _chilerend = [NavigationBottom(), Notify(), Profile()];
-
   void _onItemTapped(int index) {
     setState(() {
       _selectIndex = index;
     });
+  }
+
+  @override
+  void initState() { 
+    super.initState();
   }
 
   @override

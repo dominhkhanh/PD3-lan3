@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:app/screens/home/home.dart';
 import 'package:app/screens/notification/notification.dart';
 import 'package:app/screens/profile/profile.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import 'package:app/models/User.dart';
 
 class NavigationBottom extends StatelessWidget {
   @override
@@ -23,9 +25,20 @@ class MyNavigationBar extends StatefulWidget {
 
 class _MyNavigationBarState extends State<MyNavigationBar> {
   int _selectIndex = 0;
-  // static const List<Widget> _widgetOptions = <Widget>[
 
-  // ];
+  String student_id = "";
+  String name = "";
+
+  Future getInfo() async {
+    SharedPreferences preferences = await SharedPreferences.getInstance();
+    setState(() {
+      student_id = preferences.getString("student_id");
+      name = preferences.getString("name");
+      print(name);
+    });
+  }
+
+
   final List<Widget> _chilerend = [Home(), Notify(), Profile()];
 
   void _onItemTapped(int index) {

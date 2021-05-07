@@ -1,5 +1,7 @@
+import 'package:app/screens/authenticate/authenticate.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class Profile extends StatefulWidget {
   Profile({Key key}) : super(key: key);
@@ -8,7 +10,44 @@ class Profile extends StatefulWidget {
 }
 
 class _ProfileState extends State<Profile> {
-  // bool isObscurePassword = true;
+  String student_id, name, sex, birthday, card_number, address, class_name, faculty_id, specialize_id, phone, email; 
+  Future getInfo() async {
+    SharedPreferences preferences = await SharedPreferences.getInstance();
+    setState(() {
+      student_id = preferences.getString("student_id");
+      name = preferences.getString("name");
+      sex = preferences.getString("sex");
+      birthday = preferences.getString("birthday");
+      card_number = preferences.getString("card_number");
+      address = preferences.getString("address");
+      class_name = preferences.getString("class_name");
+      phone = preferences.getString("phone");
+      email = preferences.getString("email");
+    });
+  }
+  Future logOut(BuildContext context) async {
+    SharedPreferences preferences = await SharedPreferences.getInstance();
+    preferences.remove('student_id');
+    preferences.remove('name');
+    preferences.remove('sex');
+    preferences.remove('birthday');
+    preferences.remove('card_number');
+    preferences.remove('address');
+    preferences.remove('class_id');
+    preferences.remove('class_name');
+    preferences.remove('faculty_id');
+    preferences.remove('specialize_id');
+    preferences.remove('phone');
+    preferences.remove('email');
+    Navigator.push(context, MaterialPageRoute(builder: (context)=>Authenticate()));
+  }
+
+    @override
+  void initState() {
+    super.initState();
+    getInfo();
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -66,16 +105,15 @@ class _ProfileState extends State<Profile> {
                       ],
                     ),
                   ),
-                  SizedBox(height: 3),
-                  buildTextField(
-                      "Họ Và Tên", "Trần Sỹ Tài"), //them false vao duoi
-                  buildTextField("Giới Tính", "Nam"),
-                  buildTextField("Ngày Sinh", "01/01/1999"),
-                  buildTextField("MSSV", "12345678"),
-                  buildTextField("Lớp", "17DTHJA3"),
-                  buildTextField("SDT", "012345678"),
-                  buildTextField("Địa Chỉ", "bình thạnh"),
-                  buildTextField("Email", "tailol@gmail.com"),
+                  SizedBox(height: 5),
+                  buildTextField("Mã số sinh viên", student_id), 
+                  buildTextField("Họ Và Tên", name),
+                  buildTextField("Giới Tính", sex),
+                  buildTextField("Ngày Sinh", birthday),
+                  buildTextField("Lớp", class_name),
+                  buildTextField("Số điện thoại", phone),
+                  buildTextField("Địa Chỉ", address),
+                  buildTextField("Email", email),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: <Widget>[
@@ -94,12 +132,15 @@ class _ProfileState extends State<Profile> {
                         padding: const EdgeInsets.fromLTRB(0, 0, 0, 0),
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(20)),
-                        onPressed: () {},
+                        onPressed: () {
+                          logOut(context);
+                        },
                         child: Text("Đăng Xuất",
                             style: TextStyle(
                                 fontSize: 10,
                                 letterSpacing: 2,
-                                color: Colors.black)),
+                                color: Colors.black
+                        )),
                       ),
                     ],
                   )

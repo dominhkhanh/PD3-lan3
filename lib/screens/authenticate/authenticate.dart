@@ -1,10 +1,19 @@
 import 'dart:core';
 import 'dart:convert';
-import 'package:app/src/blocs/login_bloc.dart';
 import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http;
+import 'package:fluttertoast/fluttertoast.dart';
+import 'package:app/src/blocs/login_bloc.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:app/screens/home/home.dart';
 import 'package:app/screens/navigation/nav_bottom.dart';
-import 'package:http/http.dart' as http;
+
+void main() async{
+  WidgetsFlutterBinding.ensureInitialized();
+  SharedPreferences preferences = await SharedPreferences.getInstance();
+  var student_id = preferences.getString('student_id');
+  runApp(MaterialApp(home: student_id == null ? Authenticate() : NavigationBottom()));
+}
 
 class Authenticate extends StatefulWidget {
   @override
@@ -19,17 +28,39 @@ class _AuthenticateState extends State<Authenticate> {
   TextEditingController _passController = new TextEditingController();
 
   Future login() async {
-    Uri myUri =
-        Uri.parse("http://192.168.0.31:8080/db_flutter/controllers/login.php");
-    var url = "http:/192.168.0.31:8080/db_flutter/login.php";
+    Uri myUri = Uri.parse("http://10.0.3.2:8080/db_flutter/controllers/login.php");
     var response = await http.post(myUri, body: {
       "student_id": _userController.text,
       "password": _passController.text,
     });
-    var user = json.decode(response.body);
-    if (user == "Success") {
-      Navigator.push(
-          context, MaterialPageRoute(builder: (context) => NavigationBottom()));
+    var user =  json.decode(response.body);
+    if (user != "") {
+      SharedPreferences preferences = await SharedPreferences.getInstance();
+      preferences.setString('id', user[0]);
+      preferences.setString('student_id', _userController.text);
+      preferences.setString('name', user[2]);
+      preferences.setString('sex', user[3]);
+      preferences.setString('birthday', user[4]);
+      preferences.setString('card_number', user[5]);
+      preferences.setString('address', user[6]);
+      preferences.setString('class_id', user[7]);
+      preferences.setString('class_name', user[8]);
+      preferences.setString('faculty_id', user[9]);
+      preferences.setString('specialize_id', user[10]);
+      preferences.setString('phone', user[11]);
+      preferences.setString('email', user[12]);
+      Navigator.push(context, MaterialPageRoute(builder: (context) => NavigationBottom()));
+    }
+    else if (user == "Do not account") {
+      Fluttertoast.showToast(
+        msg: "Tài khoản không hợp lệ.",
+        toastLength: Toast.LENGTH_SHORT,
+        gravity: ToastGravity.CENTER,
+        timeInSecForIosWeb: 1,
+        backgroundColor: Colors.red,
+        textColor: Colors.white,
+        fontSize: 16.0
+      );
     }
   }
 
@@ -113,7 +144,7 @@ class _AuthenticateState extends State<Authenticate> {
                   color: Colors.blue,
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.all(Radius.circular(8))),
-                  onPressed: onSingInClicked,
+                  onPressed: onSignInClicked,
                   child: Text("Đăng Nhập",
                       style: TextStyle(color: Colors.white, fontSize: 16)),
                 ),
@@ -144,7 +175,7 @@ class _AuthenticateState extends State<Authenticate> {
     });
   }
 
-  void onSingInClicked() {
+  void onSignInClicked() {
     if (bloc.isValidInfo(_userController.text, _passController.text)) {
       login();
     }
