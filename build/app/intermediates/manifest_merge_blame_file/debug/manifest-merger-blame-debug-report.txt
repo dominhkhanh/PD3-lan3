@@ -91,6 +91,15 @@
 64-->D:\Documents\PD3\app\android\app\src\main\AndroidManifest.xml:38:13-44
 65            android:value="2" />
 65-->D:\Documents\PD3\app\android\app\src\main\AndroidManifest.xml:39:13-30
-66    </application>
-67
-68</manifest>
+66
+67        <activity
+67-->[:url_launcher] D:\Documents\PD3\app\build\url_launcher\intermediates\library_manifest\debug\AndroidManifest.xml:8:9-11:74
+68            android:name="io.flutter.plugins.urllauncher.WebViewActivity"
+68-->[:url_launcher] D:\Documents\PD3\app\build\url_launcher\intermediates\library_manifest\debug\AndroidManifest.xml:9:13-74
+69            android:exported="false"
+69-->[:url_launcher] D:\Documents\PD3\app\build\url_launcher\intermediates\library_manifest\debug\AndroidManifest.xml:10:13-37
+70            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
+70-->[:url_launcher] D:\Documents\PD3\app\build\url_launcher\intermediates\library_manifest\debug\AndroidManifest.xml:11:13-71
+71    </application>
+72
+73</manifest>

@@ -7,6 +7,7 @@ INJECTED from D:\Documents\PD3\app\android\app\src\main\AndroidManifest.xml:1:1-
 MERGED from D:\Documents\PD3\app\android\app\src\main\AndroidManifest.xml:1:1-41:12
 MERGED from [:fluttertoast] D:\Documents\PD3\app\build\fluttertoast\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-7:12
 MERGED from [:shared_preferences] D:\Documents\PD3\app\build\shared_preferences\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-7:12
+MERGED from [:url_launcher] D:\Documents\PD3\app\build\url_launcher\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-14:12
 MERGED from [androidx.multidex:multidex:2.0.0] C:\Users\transytai\.gradle\caches\transforms-2\files-2.1\91661fff203efbb9f4833ccc0aa71d03\multidex-2.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.fragment:fragment:1.1.0] C:\Users\transytai\.gradle\caches\transforms-2\files-2.1\ef3fdc30903d86d78da80ab4985197b1\fragment-1.1.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.activity:activity:1.0.0] C:\Users\transytai\.gradle\caches\transforms-2\files-2.1\f94d6bd17c7d61eba4d222f73734908f\jetified-activity-1.0.0\AndroidManifest.xml:17:1-24:12
@@ -42,6 +43,8 @@ application
 ADDED from D:\Documents\PD3\app\android\app\src\main\AndroidManifest.xml:3:4-40:19
 MERGED from D:\Documents\PD3\app\android\app\src\main\AndroidManifest.xml:3:4-40:19
 MERGED from D:\Documents\PD3\app\android\app\src\main\AndroidManifest.xml:3:4-40:19
+MERGED from [:url_launcher] D:\Documents\PD3\app\build\url_launcher\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-12:19
+MERGED from [:url_launcher] D:\Documents\PD3\app\build\url_launcher\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-12:19
 MERGED from [androidx.core:core:1.1.0] C:\Users\transytai\.gradle\caches\transforms-2\files-2.1\d35a50527208c7965f3b7e036a24a226\core-1.1.0\AndroidManifest.xml:24:5-89
 MERGED from [androidx.core:core:1.1.0] C:\Users\transytai\.gradle\caches\transforms-2\files-2.1\d35a50527208c7965f3b7e036a24a226\core-1.1.0\AndroidManifest.xml:24:5-89
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] C:\Users\transytai\.gradle\caches\transforms-2\files-2.1\1115d368e4ffc71df2e22ade68777b8b\versionedparcelable-1.1.0\AndroidManifest.xml:24:5-25:19
@@ -106,6 +109,8 @@ MERGED from [:fluttertoast] D:\Documents\PD3\app\build\fluttertoast\intermediate
 MERGED from [:fluttertoast] D:\Documents\PD3\app\build\fluttertoast\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [:shared_preferences] D:\Documents\PD3\app\build\shared_preferences\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [:shared_preferences] D:\Documents\PD3\app\build\shared_preferences\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
+MERGED from [:url_launcher] D:\Documents\PD3\app\build\url_launcher\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
+MERGED from [:url_launcher] D:\Documents\PD3\app\build\url_launcher\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [androidx.multidex:multidex:2.0.0] C:\Users\transytai\.gradle\caches\transforms-2\files-2.1\91661fff203efbb9f4833ccc0aa71d03\multidex-2.0.0\AndroidManifest.xml:20:5-43
 MERGED from [androidx.multidex:multidex:2.0.0] C:\Users\transytai\.gradle\caches\transforms-2\files-2.1\91661fff203efbb9f4833ccc0aa71d03\multidex-2.0.0\AndroidManifest.xml:20:5-43
 MERGED from [androidx.fragment:fragment:1.1.0] C:\Users\transytai\.gradle\caches\transforms-2\files-2.1\ef3fdc30903d86d78da80ab4985197b1\fragment-1.1.0\AndroidManifest.xml:20:5-22:41
@@ -146,3 +151,11 @@ uses-permission#android.permission.INTERNET
 ADDED from D:\Documents\PD3\app\android\app\src\debug\AndroidManifest.xml:6:5-66
 	android:name
 		ADDED from D:\Documents\PD3\app\android\app\src\debug\AndroidManifest.xml:6:22-64
+activity#io.flutter.plugins.urllauncher.WebViewActivity
+ADDED from [:url_launcher] D:\Documents\PD3\app\build\url_launcher\intermediates\library_manifest\debug\AndroidManifest.xml:8:9-11:74
+	android:exported
+		ADDED from [:url_launcher] D:\Documents\PD3\app\build\url_launcher\intermediates\library_manifest\debug\AndroidManifest.xml:10:13-37
+	android:theme
+		ADDED from [:url_launcher] D:\Documents\PD3\app\build\url_launcher\intermediates\library_manifest\debug\AndroidManifest.xml:11:13-71
+	android:name
+		ADDED from [:url_launcher] D:\Documents\PD3\app\build\url_launcher\intermediates\library_manifest\debug\AndroidManifest.xml:9:13-74
