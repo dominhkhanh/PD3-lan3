@@ -2,9 +2,10 @@ import 'dart:core';
 import 'dart:io';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter/material.dart';
 import 'package:qr_flutter/qr_flutter.dart';
-import 'package:qr_code_scanner/qr_code_scanner.dart';
+import 'package:flutter_barcode_scanner/flutter_barcode_scanner.dart';
 
 // ignore: must_be_immutable
 class Detail extends StatefulWidget{
@@ -18,22 +19,7 @@ class Detail extends StatefulWidget{
   _DetailState createState() => new _DetailState();
 }
 class _DetailState extends State<Detail>{
-    final GlobalKey qrKey = GlobalKey(debugLabel: 'QR');
-  Barcode result;
-  QRViewController controller;
-
-  // In order to get hot reload to work we need to pause the camera if the platform
-  // is android, or resume the camera if the platform is iOS.
-  @override
-  void reassemble() {
-    super.reassemble();
-    if (Platform.isAndroid) {
-      controller.pauseCamera();
-    } else if (Platform.isIOS) {
-      controller.resumeCamera();
-    }
-  }
-
+  String qrCode = 'Unknown';
   var defaultText = TextStyle(color: Colors.black);
   @override
   Widget build(BuildContext context) {
@@ -43,51 +29,29 @@ class _DetailState extends State<Detail>{
       ),
       body: ListView(
         children: <Widget>[
-          Column(
-            children: <Widget>[
-              Expanded(
-                flex: 5,
-                child: QRView(
-                  key: qrKey,
-                  onQRViewCreated: _onQRViewCreated,
-                ),
+          Center (
+            child: Container(
+              padding: const EdgeInsets.fromLTRB(0, 10, 0, 0),
+              child: QrImage(
+                data: widget.link,
+                version: QrVersions.auto,
+                size: 250,
+                gapless: false,
+                errorStateBuilder: (cxt, err) {
+                  return Container(
+                    child: Center(
+                      child: Text(
+                        "Uh oh! Something went wrong...",
+                        textAlign: TextAlign.center,
+                      ),
+                    ),
+                  );
+                },
               ),
-              Expanded(
-                flex: 1,
-                child: Center(
-                  child: (result != null)
-                      ? Text(
-                          'Barcode Type: ${describeEnum(result.format)}   Data: ${result.code}')
-                      : Text('Scan a code'),
-                ),
-              )
-            ],
+            ),
           ),
-          // Padding(
-          //   padding: const EdgeInsets.fromLTRB(0, 10, 0, 0),
-          //   child: QrImage(
-          //     data: widget.qrcode,
-          //     version: QrVersions.auto,
-          //     size: 250,
-          //     gapless: false,
-          //     embeddedImage: AssetImage(widget.qrcode),
-          //     embeddedImageStyle: QrEmbeddedImageStyle(
-          //       size: Size(80, 80),
-          //     ),
-          //     errorStateBuilder: (cxt, err) {
-          //       return Container(
-          //         child: Center(
-          //           child: Text(
-          //             "Uh oh! Something went wrong...",
-          //             textAlign: TextAlign.center,
-          //           ),
-          //         ),
-          //       );
-          //     },
-          //   ),
-          // ),
           ListTile(
-            contentPadding: EdgeInsets.zero,
+            contentPadding: EdgeInsets.fromLTRB(20, 0, 0, 0),
             title: Text(
               widget.subject_name,
               style: Theme.of(context).textTheme.headline6,
@@ -97,49 +61,70 @@ class _DetailState extends State<Detail>{
             ),
           ),
           ListTile(
-            contentPadding: EdgeInsets.zero,
+            contentPadding: EdgeInsets.fromLTRB(20, 0, 0, 0),
             title: Text(
               "Giảng viên: " + widget.teacher_name,
               style: Theme.of(context).textTheme.subtitle1
             ),
           ),
           ListTile(
-            contentPadding: EdgeInsets.zero,
+            contentPadding: EdgeInsets.fromLTRB(20, 0, 0, 0),
             title: Text(
               "Ngày học: " + widget.date,
               style: Theme.of(context).textTheme.subtitle1,
             ),
           ),
           ListTile(
-            contentPadding: EdgeInsets.zero,
+            contentPadding: EdgeInsets.fromLTRB(20, 0, 0, 0),
             title: Text(
               "Ca học: " + widget.time_name,
               style: Theme.of(context).textTheme.subtitle1,
             ),
           ),
           ListTile(
-            contentPadding: EdgeInsets.zero,
+            contentPadding: EdgeInsets.fromLTRB(20, 0, 0, 0),
             title: Text(
               "Nội dung: " + widget.contents,
               style: Theme.of(context).textTheme.subtitle1,
             ),
           ),
+           Padding(
+            padding: const EdgeInsets.fromLTRB(40, 10, 40, 30),
+            child: SizedBox(
+              width: 50,
+              height: 50,
+              child: RaisedButton(
+                color: Colors.blue,
+                onPressed: () => scanQRCode(),
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(50),
+                    side: BorderSide(color:Colors.blue)
+                ),
+                textColor: Colors.white, 
+                child: Text('Quét mã QR'),
+              ),
+            ),
+          )
         ],
       ),
     );
   }
-  void _onQRViewCreated(QRViewController controller) {
-    this.controller = controller;
-    controller.scannedDataStream.listen((scanData) {
-      setState(() {
-        result = scanData;
-      });
-    });
-  }
 
-  @override
-  void dispose() {
-    controller?.dispose();
-    super.dispose();
+  Future<void> scanQRCode() async {
+    try {
+      final qrCode = await FlutterBarcodeScanner.scanBarcode(
+        "#ff6666", 
+        "Trở về", 
+        true, 
+        ScanMode.QR
+      );
+      if (!mounted) return;
+
+      setState(() {
+        this.qrCode = qrCode;
+      });
+    } on PlatformException {
+      qrCode = 'Failed to get platform version.';
+    }
   }
 }
