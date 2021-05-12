@@ -4,6 +4,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:http/http.dart' as http;
+import 'package:app/screens/list/list_form.dart';
 import 'package:app/screens/list/details.dart';
 
 class ListSchedule extends StatefulWidget {
@@ -13,10 +14,13 @@ class ListSchedule extends StatefulWidget {
 }
 
 class  _ListSchedule extends State<ListSchedule> {
-  int id;
-  String teacher_name, subject_name, class_name, contents, link, time_name, date;
+  // ignore: non_constant_identifier_names
+  String id, teacher_name, subject_name, class_name, contents, link, time_name, date, qrcode;
+  // ignore: non_constant_identifier_names
   List list_booking;
+  // ignore: non_constant_identifier_names
   String student_id, class_id;
+  // ignore: non_constant_identifier_names
   Future<List> GetListBooking() async {
     SharedPreferences preferences = await SharedPreferences.getInstance();
     setState(() {
@@ -42,37 +46,38 @@ class  _ListSchedule extends State<ListSchedule> {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-        home: Scaffold(
-          appBar: AppBar(
-            centerTitle: true,
-            title: Text("Lịch Học Online"),
+    return Scaffold(
+      appBar: AppBar(
+        centerTitle: true,
+        title: Text("Lịch Học"),
+      ),
+      body: Center(
+        child: Column(
+          children: new List.generate(
+            list_booking == null ? 0 : list_booking.length,
+            (index) => ListForm(
+                text: list_booking[index]['subject_name'] + " - " + list_booking[index]['class_name'],
+                icon: "assets/icons/Bell.svg",
+                press:() => {
+                  id = list_booking[index]['id'].toString(),
+                  teacher_name = list_booking[index]['teacher_name'].toString(),
+                  subject_name = list_booking[index]['subject_name'].toString(),
+                  class_name = list_booking[index]['class_name'].toString(),
+                  time_name = list_booking[index]['time_name'].toString(),
+                  contents = list_booking[index]['content'].toString(),
+                  link = list_booking[index]['linkstream'].toString(),
+                  date = list_booking[index]['date']['date'].split(" ")[0].toString(),
+                  qrcode = list_booking[index]['qrcode'].toString(),
+                  Navigator.push(context, MaterialPageRoute(
+                    builder: (context)=> Detail(
+                      teacher_name: teacher_name, subject_name: subject_name, class_name: class_name, time_name: time_name, contents: contents, link: link, date: date, qrcode: qrcode
+                    )
+                  )
+                )},
+              ),
           ),
-          body: _buildListView(context),
-        )
-    );
-  }
-  ListView _buildListView(BuildContext buildContext){
-    return ListView.builder(
-        itemCount: list_booking == null ? 0 : list_booking.length,
-        itemBuilder: (_, index){
-          return ListTile(
-            title: Text(list_booking[index]['subject_name'] + " - " + list_booking[index]['class_name']),
-            leading: Icon(Icons.book),
-            trailing: Icon(Icons.arrow_forward),
-            onTap: (){
-              id = list_booking[index]['id'];
-              subject_name = list_booking[index]['subject_name'];
-              class_name = list_booking[index]['class_name'];
-              contents = list_booking[index]['content'];
-              link = list_booking[index]['linkstream'];
-              date = list_booking[index]['date'];
-              var route = new MaterialPageRoute(
-                builder: (BuildContext content) => new Detail(id, subject_name, class_name, contents, link, date));
-              Navigator.of(context).push(route);
-            },
-          );
-        },
+        ),
+      ),
     );
   }
 }
