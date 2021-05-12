@@ -27,7 +27,7 @@ class  _ListSchedule extends State<ListSchedule> {
       student_id = preferences.getString("student_id");
       class_id = preferences.getString("class_id");
     });
-    Uri myUri = Uri.parse("http://10.0.3.2:8080/db_flutter/controllers/get_booking_by_stu_id.php");
+    Uri myUri = Uri.parse("http://10.0.2.2:8080/db_flutter/controllers/get_booking_by_stu_id.php");
     var response = await http.post(
       myUri, 
       body: { "student_id": student_id, "class_id": class_id }
@@ -65,7 +65,7 @@ class  _ListSchedule extends State<ListSchedule> {
                   class_name = list_booking[index]['class_name'].toString(),
                   time_name = list_booking[index]['time_name'].toString(),
                   contents = list_booking[index]['content'].toString(),
-                  link = list_booking[index]['linkstream'].toString(),
+                  link = list_booking[index]['link'].toString(),
                   date = list_booking[index]['date']['date'].split(" ")[0].toString(),
                   qrcode = list_booking[index]['qrcode'].toString(),
                   Navigator.push(context, MaterialPageRoute(

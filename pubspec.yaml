@@ -33,8 +33,10 @@ dependencies:
   shared_preferences:
   flutter_linkify: ^5.0.2
   url_launcher: ^6.0.3
+  cached_network_image: 
+  font_awesome_flutter:
   qr_flutter: ^4.0.0
-  qr_code_scanner: ^0.4.0
+  flutter_barcode_scanner: ^1.0.1
   incrementally_loading_listview: ^0.3.0
 
 dev_dependencies:
