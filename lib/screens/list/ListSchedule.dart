@@ -49,14 +49,15 @@ class  _ListSchedule extends State<ListSchedule> {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: Text("Lịch Học"),
+        title: Text("Lịch Học"), 
       ),
       body: Center(
         child: Column(
           children: new List.generate(
             list_booking == null ? 0 : list_booking.length,
             (index) => ListForm(
-                text: list_booking[index]['subject_name'] + " - " + list_booking[index]['class_name'],
+                text: list_booking[index]['subject_name'] + " (" + list_booking[index]['date']['date'].split(" ")[0] + " - " + list_booking[index]['time_name'] + ")",
+                
                 icon: "assets/icons/Bell.svg",
                 press:() => {
                   id = list_booking[index]['id'].toString(),
@@ -78,6 +79,10 @@ class  _ListSchedule extends State<ListSchedule> {
           ),
         ),
       ),
+      floatingActionButton: FloatingActionButton(
+        tooltip: 'Increment',
+        child: Icon(Icons.scanner),
+      ), 
     );
   }
 }

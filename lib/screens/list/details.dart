@@ -101,7 +101,7 @@ class _DetailState extends State<Detail>{
                     side: BorderSide(color:Colors.blue)
                 ),
                 textColor: Colors.white, 
-                child: Text('Quét mã QR'),
+                child: Text('Bắt đầu học'),
               ),
             ),
           )
