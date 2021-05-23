@@ -5,7 +5,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/material.dart';
 import 'package:qr_flutter/qr_flutter.dart';
-import 'package:flutter_barcode_scanner/flutter_barcode_scanner.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 // ignore: must_be_immutable
 class Detail extends StatefulWidget{
@@ -95,7 +95,7 @@ class _DetailState extends State<Detail>{
               height: 50,
               child: RaisedButton(
                 color: Colors.blue,
-                onPressed: () => scanQRCode(),
+                onPressed: () => launchURL(widget.link),
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(50),
                     side: BorderSide(color:Colors.blue)
@@ -109,22 +109,11 @@ class _DetailState extends State<Detail>{
       ),
     );
   }
-
-  Future<void> scanQRCode() async {
-    try {
-      final qrCode = await FlutterBarcodeScanner.scanBarcode(
-        "#ff6666", 
-        "Trở về", 
-        true, 
-        ScanMode.QR
-      );
-      if (!mounted) return;
-
-      setState(() {
-        this.qrCode = qrCode;
-      });
-    } on PlatformException {
-      qrCode = 'Failed to get platform version.';
+  launchURL(String url) async {
+    if (await canLaunch(url)) {
+      await launch(url);
+    } else {
+      throw 'Could not launch $url';
     }
   }
 }

@@ -2,10 +2,13 @@ import 'dart:core';
 import 'dart:convert';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:http/http.dart' as http;
 import 'package:app/screens/list/list_form.dart';
 import 'package:app/screens/list/details.dart';
+import 'package:qr_flutter/qr_flutter.dart';
+import 'package:flutter_barcode_scanner/flutter_barcode_scanner.dart';
 
 class ListSchedule extends StatefulWidget {
   ListSchedule({Key key }) : super (key: key);
@@ -14,6 +17,8 @@ class ListSchedule extends StatefulWidget {
 }
 
 class  _ListSchedule extends State<ListSchedule> {
+  String qrCode = 'Unknown';
+  var defaultText = TextStyle(color: Colors.black);
   // ignore: non_constant_identifier_names
   String id, teacher_name, subject_name, class_name, contents, link, time_name, date, qrcode;
   // ignore: non_constant_identifier_names
@@ -27,7 +32,7 @@ class  _ListSchedule extends State<ListSchedule> {
       student_id = preferences.getString("student_id");
       class_id = preferences.getString("class_id");
     });
-    Uri myUri = Uri.parse("http://10.0.2.2:8080/db_flutter/controllers/get_booking_by_stu_id.php");
+    Uri myUri = Uri.parse("http://10.0.3.2:8080/db_flutter/controllers/get_booking_by_stu_id.php");
     var response = await http.post(
       myUri, 
       body: { "student_id": student_id, "class_id": class_id }
@@ -80,9 +85,28 @@ class  _ListSchedule extends State<ListSchedule> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
+        onPressed: () => scanQRCode(),
         tooltip: 'Increment',
         child: Icon(Icons.scanner),
       ), 
     );
+  }
+
+    Future<void> scanQRCode() async {
+    try {
+      final qrCode = await FlutterBarcodeScanner.scanBarcode(
+        "#ff6666", 
+        "Trở về", 
+        true, 
+        ScanMode.QR
+      );
+      if (!mounted) return;
+
+      setState(() {
+        this.qrCode = qrCode;
+      });
+    } on PlatformException {
+      qrCode = 'Failed to get platform version.';
+    }
   }
 }

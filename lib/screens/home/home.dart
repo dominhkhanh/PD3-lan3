@@ -6,6 +6,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:app/screens/notification/notification.dart';
 import 'package:app/screens/profile/profile.dart';
 import 'package:app/screens/navigation/nav_bottom.dart';
+import 'package:app/screens/list/ListSchedule.dart';
 
 class Home extends StatelessWidget {
   @override
@@ -102,32 +103,87 @@ class _MyNavigationBarState extends State<MyNavigationBar> {
           const SizedBox(height: 16.0),
           Row(
             children: <Widget>[
-              Expanded(
-                child: _buildWikiCategory(FontAwesomeIcons.calendarCheck,
-                    "Lịch học online", Colors.deepOrange.withOpacity(0.7)),
+              Container(
+                margin: EdgeInsets.all(10),
+                width: 160,
+                height: 110,
+                child: RaisedButton(
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(18.0)),
+                  onPressed: () {
+                    Navigator.push(context, MaterialPageRoute(
+                      builder: (context)=> ListSchedule()));
+                  },
+                  padding: EdgeInsets.all(10.0),
+                  color: Colors.deepOrange.withOpacity(0.9),
+                  textColor: Colors.white,
+                  child: Expanded(
+                    child: _buildWikiCategory(FontAwesomeIcons.calendarCheck,
+                        "Lịch học online", Colors.deepOrange.withOpacity(0.7)),
+                  ),
+                ),
               ),
-              const SizedBox(width: 16.0),
-              Expanded(
-                child: _buildWikiCategory(FontAwesomeIcons.lock,
-                    "Bài tập", Colors.blue.withOpacity(0.6)),
+              const SizedBox(width: 5.0),
+              Container(
+                margin: EdgeInsets.all(10),
+                width: 160,
+                height: 110,
+                child: RaisedButton(
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(18.0)),
+                  onPressed: () {},
+                  padding: EdgeInsets.all(10.0),
+                  color: Colors.blue.withOpacity(0.9),
+                  textColor: Colors.white,
+                  child: Expanded(
+                    child: _buildWikiCategory(FontAwesomeIcons.lock,
+                        "Bài tập", Colors.blue.withOpacity(0.6)),
+                  ),
+                ),
               ),
             ],
           ),
-          const SizedBox(height: 16.0),
+          const SizedBox(height: 5.0),
           Row(
             children: <Widget>[
-              Expanded(
-                child: _buildWikiCategory(FontAwesomeIcons.bookmark,
-                    "Ghi chú", Colors.indigo.withOpacity(0.7)),
-              ),
-              const SizedBox(width: 16.0),
-              Expanded(
-                child: _buildWikiCategory(
-                    FontAwesomeIcons.file, "Tài liệu học tập", Colors.greenAccent),
-              ),
+              Container(
+                margin: EdgeInsets.all(10),
+                width: 160,
+                height: 110,
+                child: RaisedButton(
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(18.0)),
+                  onPressed: () {},
+                  padding: EdgeInsets.all(10.0),
+                  color: Colors.indigo.withOpacity(0.9),
+                  textColor: Colors.white,
+                  child: Expanded(
+                    child: _buildWikiCategory(FontAwesomeIcons.bookmark,
+                        "Ghi chú", Colors.indigo.withOpacity(0.7)),
+                  ),
+                ),
+              ),   
+              const SizedBox(width: 5.0),
+              Container(
+                margin: EdgeInsets.all(10),
+                width: 160,
+                height: 110,
+                child: RaisedButton(
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(18.0)),
+                  onPressed: () {},
+                  padding: EdgeInsets.all(10.0),
+                  color: Colors.greenAccent.withOpacity(0.9),
+                  textColor: Colors.white,
+                  child: Expanded(
+                    child: _buildWikiCategory(
+                        FontAwesomeIcons.file, "Tài liệu học tập", Colors.greenAccent),
+                  ),
+                ),
+              ),   
             ],
           ),
-          const SizedBox(height: 16.0),
+          const SizedBox(height: 5.0),
         ],
       ),
     );

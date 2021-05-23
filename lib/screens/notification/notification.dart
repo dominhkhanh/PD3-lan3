@@ -26,7 +26,7 @@ List list_notification;
     setState(() {
       id = preferences.getString("id");
     });
-    Uri myUri = Uri.parse("http://10.0.2.2:8080/db_flutter/controllers/get_notification.php");
+    Uri myUri = Uri.parse("http://10.0.3.2:8080/db_flutter/controllers/get_notification.php");
     var response = await http.post(
       myUri, 
       body: { "student_id": id }

@@ -28,13 +28,24 @@ class _AuthenticateState extends State<Authenticate> {
   TextEditingController _passController = new TextEditingController();
 
   Future login() async {
-    Uri myUri = Uri.parse("http://10.0.2.2:8080/db_flutter/controllers/login.php");
+    Uri myUri = Uri.parse("http://10.0.3.2:8080/db_flutter/controllers/login.php");
     var response = await http.post(myUri, body: {
       "student_id": _userController.text,
       "password": _passController.text,
     });
-    var user =  json.decode(response.body);
-    if (user != "") {
+    var user = json.decode(response.body);
+    if (user.length == 0) {
+      Fluttertoast.showToast(
+        msg: "Tài khoản không hợp lệ.",
+        toastLength: Toast.LENGTH_SHORT,
+        gravity: ToastGravity.CENTER,
+        timeInSecForIosWeb: 1,
+        backgroundColor: Colors.red,
+        textColor: Colors.white,
+        fontSize: 16.0
+      );
+    }
+    else if (user.length > 0) {
       SharedPreferences preferences = await SharedPreferences.getInstance();
       preferences.setString('id', user[0]);
       preferences.setString('student_id', _userController.text);
@@ -50,17 +61,6 @@ class _AuthenticateState extends State<Authenticate> {
       preferences.setString('phone', user[11]);
       preferences.setString('email', user[12]);
       Navigator.push(context, MaterialPageRoute(builder: (context) => NavigationBottom()));
-    }
-    else if (user == "Do not account") {
-      Fluttertoast.showToast(
-        msg: "Tài khoản không hợp lệ.",
-        toastLength: Toast.LENGTH_SHORT,
-        gravity: ToastGravity.CENTER,
-        timeInSecForIosWeb: 1,
-        backgroundColor: Colors.red,
-        textColor: Colors.white,
-        fontSize: 16.0
-      );
     }
   }
 
