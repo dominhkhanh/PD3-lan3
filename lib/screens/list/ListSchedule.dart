@@ -8,6 +8,7 @@ import 'package:http/http.dart' as http;
 import 'package:app/screens/list/list_form.dart';
 import 'package:app/screens/list/details.dart';
 import 'package:qr_flutter/qr_flutter.dart';
+import 'package:table_calendar/table_calendar.dart';
 import 'package:flutter_barcode_scanner/flutter_barcode_scanner.dart';
 
 class ListSchedule extends StatefulWidget {
@@ -61,15 +62,15 @@ class  _ListSchedule extends State<ListSchedule> {
           children: new List.generate(
             list_booking == null ? 0 : list_booking.length,
             (index) => ListForm(
-                text: list_booking[index]['subject_name'] + " (" + list_booking[index]['date']['date'].split(" ")[0] + " - " + list_booking[index]['time_name'] + ")",
+                text: list_booking[index]['subject'] + " (" + list_booking[index]['date']['date'].split(" ")[0] + " - " + list_booking[index]['time'] + ")",
                 
                 icon: "assets/icons/Bell.svg",
                 press:() => {
                   id = list_booking[index]['id'].toString(),
-                  teacher_name = list_booking[index]['teacher_name'].toString(),
-                  subject_name = list_booking[index]['subject_name'].toString(),
-                  class_name = list_booking[index]['class_name'].toString(),
-                  time_name = list_booking[index]['time_name'].toString(),
+                  teacher_name = list_booking[index]['teacher'].toString(),
+                  subject_name = list_booking[index]['subject'].toString(),
+                  class_name = list_booking[index]['class'].toString(),
+                  time_name = list_booking[index]['time'].toString(),
                   contents = list_booking[index]['content'].toString(),
                   link = list_booking[index]['link'].toString(),
                   date = list_booking[index]['date']['date'].split(" ")[0].toString(),

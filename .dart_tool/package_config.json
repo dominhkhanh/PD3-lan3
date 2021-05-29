@@ -164,6 +164,12 @@
       "languageVersion": "2.0"
     },
     {
+      "name": "intl",
+      "rootUri": "file:///C:/Users/transytai/AppData/Local/Pub/Cache/hosted/pub.dartlang.org/intl-0.17.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "js",
       "rootUri": "file:///C:/Users/transytai/AppData/Local/Pub/Cache/hosted/pub.dartlang.org/js-0.6.3",
       "packageUri": "lib/",
@@ -314,6 +320,12 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "simple_gesture_detector",
+      "rootUri": "file:///C:/Users/transytai/AppData/Local/Pub/Cache/hosted/pub.dartlang.org/simple_gesture_detector-0.2.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "sky_engine",
       "rootUri": "file:///C:/SRC/flutter/bin/cache/pkg/sky_engine",
       "packageUri": "lib/",
@@ -358,6 +370,12 @@
     {
       "name": "synchronized",
       "rootUri": "file:///C:/Users/transytai/AppData/Local/Pub/Cache/hosted/pub.dartlang.org/synchronized-3.0.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "table_calendar",
+      "rootUri": "file:///C:/Users/transytai/AppData/Local/Pub/Cache/hosted/pub.dartlang.org/table_calendar-3.0.0",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -452,7 +470,7 @@
       "languageVersion": "2.7"
     }
   ],
-  "generated": "2021-05-12T09:27:53.244396Z",
+  "generated": "2021-05-23T15:21:26.923238Z",
   "generator": "pub",
   "generatorVersion": "2.12.3"
 }

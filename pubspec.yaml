@@ -36,6 +36,7 @@ dependencies:
   cached_network_image: 
   font_awesome_flutter:
   qr_flutter: ^4.0.0
+  table_calendar: ^3.0.0
   flutter_barcode_scanner: ^1.0.1
   incrementally_loading_listview: ^0.3.0
 

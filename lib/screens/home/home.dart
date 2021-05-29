@@ -1,12 +1,12 @@
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:app/plugins/flutter_ui_challenges/assets.dart';
-import 'package:app/plugins/flutter_ui_challenges/network_image.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:app/screens/notification/notification.dart';
-import 'package:app/screens/profile/profile.dart';
 import 'package:app/screens/navigation/nav_bottom.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:app/screens/list/ListSchedule.dart';
+import 'package:app/screens/profile/profile.dart';
+import 'package:app/screens/view_score/view_score.dart';
 
 class Home extends StatelessWidget {
   @override
@@ -37,9 +37,18 @@ class _MyNavigationBarState extends State<MyNavigationBar> {
     });
   }
 
+  String name;
+  Future getName() async {
+    SharedPreferences preferences = await SharedPreferences.getInstance();
+    setState(() {
+      name = preferences.getString("name");
+    });
+  }
+
   @override
   void initState() { 
     super.initState();
+    getName();
   }
 
   @override
@@ -94,8 +103,8 @@ class _MyNavigationBarState extends State<MyNavigationBar> {
         padding: const EdgeInsets.all(16.0),
         children: <Widget>[
           Text(
-            "Welcome!",
-            style: Theme.of(context).textTheme.display1.copyWith(
+            name != null ? 'Xin chào, ' + name + "!" : null,
+            style: Theme.of(context).textTheme.headline5.copyWith(
                   fontWeight: FontWeight.bold,
                   color: Colors.black,
                 ),
@@ -131,13 +140,16 @@ class _MyNavigationBarState extends State<MyNavigationBar> {
                 child: RaisedButton(
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(18.0)),
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(context, MaterialPageRoute(
+                      builder: (context)=> ViewScore()));
+                  },
                   padding: EdgeInsets.all(10.0),
                   color: Colors.blue.withOpacity(0.9),
                   textColor: Colors.white,
                   child: Expanded(
                     child: _buildWikiCategory(FontAwesomeIcons.lock,
-                        "Bài tập", Colors.blue.withOpacity(0.6)),
+                        "Xem điểm", Colors.blue.withOpacity(0.6)),
                   ),
                 ),
               ),
