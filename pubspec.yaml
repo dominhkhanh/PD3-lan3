@@ -36,9 +36,11 @@ dependencies:
   cached_network_image: 
   font_awesome_flutter:
   qr_flutter: ^4.0.0
-  table_calendar: ^3.0.0
+  table_calendar: 
+  flutter_week_view: ^1.1.0
   flutter_barcode_scanner: ^1.0.1
   incrementally_loading_listview: ^0.3.0
+  syncfusion_flutter_calendar: ^18.4.46
 
 dev_dependencies:
   flutter_test:

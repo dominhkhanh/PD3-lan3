@@ -5,15 +5,16 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/material.dart';
 import 'package:qr_flutter/qr_flutter.dart';
+import 'package:syncfusion_flutter_calendar/calendar.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 // ignore: must_be_immutable
 class Detail extends StatefulWidget{
   // ignore: non_constant_identifier_names
-  String id, teacher_name, subject_name, class_name, contents, link, time_name, date, qrcode;
+  String id, teacher_name, phone, email, subject_name, class_name, contents, link, time_name, date, qrcode;
 
   // ignore: non_constant_identifier_names
-  Detail({Key key, this.teacher_name, this.subject_name, this.class_name, this.time_name, this.contents, this.link, this.date, this.qrcode}) : super(key: key);
+  Detail({Key key, this.id, this.teacher_name, this.subject_name, this.class_name, this.phone, this.email, this.link, this.contents, this.date, this.time_name, this.qrcode}) : super(key: key);
   
   @override
   _DetailState createState() => new _DetailState();

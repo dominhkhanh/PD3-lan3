@@ -4,7 +4,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:app/screens/notification/notification.dart';
 import 'package:app/screens/navigation/nav_bottom.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:app/screens/list/ListSchedule.dart';
+import 'package:app/screens/list/list_schedule.dart';
 import 'package:app/screens/profile/profile.dart';
 import 'package:app/screens/view_score/view_score.dart';
 
@@ -114,7 +114,7 @@ class _MyNavigationBarState extends State<MyNavigationBar> {
             children: <Widget>[
               Container(
                 margin: EdgeInsets.all(10),
-                width: 160,
+                width: 150,
                 height: 110,
                 child: RaisedButton(
                   shape: RoundedRectangleBorder(
@@ -160,7 +160,7 @@ class _MyNavigationBarState extends State<MyNavigationBar> {
             children: <Widget>[
               Container(
                 margin: EdgeInsets.all(10),
-                width: 160,
+                width: 150,
                 height: 110,
                 child: RaisedButton(
                   shape: RoundedRectangleBorder(

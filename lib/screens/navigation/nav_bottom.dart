@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:app/screens/home/home.dart';
 import 'package:app/screens/notification/notification.dart';
 import 'package:app/screens/profile/profile.dart';
-import 'package:app/screens/list/ListSchedule.dart';
+import 'package:app/screens/list/list_schedule.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class NavigationBottom extends StatelessWidget {  
